@@ -1,4 +1,8 @@
-### Work in progress
+# Serverless DynamoDB API Boilerplate
+
+Kickstart your Cloud-native and Serverless project in minutes. **This is work in progress**
+
+***
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
