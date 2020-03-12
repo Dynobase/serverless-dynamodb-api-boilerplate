@@ -1,9 +1,10 @@
 import { APIGatewayProxyHandler } from 'aws-lambda';
 import 'source-map-support/register';
 import { uuid } from 'uuidv4';
+
 import { httpResponse } from '../../../../utils/responses';
-import { ThingModel } from '../../../../repositories/dynamodb/models/Thing';
-import { documentClient } from '../../../../repositories/dynamodb/DynamoDB';
+import { documentClient } from '../../../../services/DynamoDB';
+import { ThingModel } from '../../../../models/Thing';
 
 export const handle: APIGatewayProxyHandler = async (event, _context) => {
   console.log(event);

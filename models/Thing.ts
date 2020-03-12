@@ -1,5 +1,5 @@
 import { Model } from "dynamodb-toolbox";
-import getTableName from "../../../utils/consts";
+import getTableName from "../utils/consts";
 
 export const ThingModel = new Model("Thing", {
   // Specify table name
