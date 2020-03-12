@@ -8,6 +8,7 @@
     "dev": "NODE_OPTIONS=--max_old_space_size=8192 serverless offline"
   },
   "dependencies": {
+    "aws-xray-sdk": "^2.5.0",
     "dynamodb-toolbox": "^0.1.0",
     "serverless": "^1.66.0",
     "source-map-support": "^0.5.10"
