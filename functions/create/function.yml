@@ -1,5 +1,5 @@
 create:
-  handler: functions/create/function/handler
+  handler: functions/create/function.handle
   events:
     - http:
         method: post

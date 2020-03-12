@@ -4,15 +4,16 @@ const slsw = require("serverless-webpack");
 const entries = {};
 
 Object.keys(slsw.lib.entries).forEach(
-  key => (entries[key] = ["./source-map-install.js", slsw.lib.entries[key]])
+  key => (entries[key] = [ /* "./source-map-install.js", */ slsw.lib.entries[key]])
 );
 
 module.exports = {
   mode: slsw.lib.webpack.isLocal ? "development" : "production",
-  entry: {
-    ...entries,
-    schema: path.join(__dirname, "schema.graphql")
-  },
+  entry: slsw.lib.entries,
+  // {
+  //   ...entries,
+  //   schema: path.join(__dirname, "schema.graphql")
+  // },
   devtool: "source-map",
   resolve: {
     extensions: [".js", ".jsx", ".json", ".ts", ".tsx", ".mjs", ".graphql"]
@@ -32,7 +33,6 @@ module.exports = {
           transpileOnly: true
         }
       },
-      ,
       {
         type: "javascript/auto",
         test: /\.mjs$/,
