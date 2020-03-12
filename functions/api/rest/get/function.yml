@@ -1,12 +1,14 @@
-create:
-    handler: functions/api/rest/create/function.handle
-    role: RestAPIGetFunctionRole
-    events:
-      - http:
-          cors: true
-          method: get
-          path: /
-          request:
-            template:
-              application/json: '{ "foo" : "$input.params(''bar'')" }'
+get:
+  handler: functions/api/rest/get/function.handle
+  role: RestAPIGetFunctionRole
+  events:
+    - http:
+        cors: true
+        method: get
+        path: /
+        parameters:
+          querystrings:
+            id: true
+            status: true
+            date_added: true
   

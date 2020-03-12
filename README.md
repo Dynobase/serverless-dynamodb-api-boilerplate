@@ -18,7 +18,7 @@ This repository is a result of many lessons from launching variety of Serverless
 - **Interacts with DynamoDB** using [DocumentClient](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html) and [DynamoDB Toolbox](http://dynamodbtoolbox.com/)
 - **Works with both REST and GraphQL**
 - **Managable** - To avoid spaghetti code, `serverless.yml` is divided into logical parts. Functions' code is placed next to their definitions
-- **CORS** - allows preflight requests to the resource using the OPTIONS method.
+- **CORS by default** - allows preflight requests to the resource using the OPTIONS method.
 
 ## Quick start
 
