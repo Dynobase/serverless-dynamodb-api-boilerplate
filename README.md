@@ -46,6 +46,7 @@ yarn
 
 After that, start the project locally:
 ```sh
+docker-compose up -d # To start DynamoDB local
 yarn dev
 ```
 
