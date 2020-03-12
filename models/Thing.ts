@@ -1,6 +1,9 @@
 import { Model } from "dynamodb-toolbox";
 import getTableName from "../utils/consts";
 
+console.log(JSON.stringify(process.env.DATA_STORE_ARN));
+console.log(getTableName())
+
 export const ThingModel = new Model("Thing", {
   // Specify table name
   table: getTableName(),

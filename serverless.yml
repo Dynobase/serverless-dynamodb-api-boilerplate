@@ -4,7 +4,7 @@ service:
 frameworkVersion: '>=1.50.0'
 
 custom:
-  stage: ${opt:stage, 'dev'} # Fallback to dev if not set via --stage flag  
+  stage: ${opt:stage, 'local'} # Fallback to "local" if not set via --stage flag  
 
 plugins:
   - serverless-webpack
@@ -21,8 +21,7 @@ provider:
   tracing: true # Enable X-Ray tracing
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1 # Make sure AWS-SDK reuses HTTP connections
-    DATA_STORE_ARN:
-      Ref: SingleTableDesignDynamoDBTable
+    DATA_STORE_ARN: datastore-${self:provider.stage}
 
 functions:
   - ${file(./functions/api/rest/create/function.yml)}

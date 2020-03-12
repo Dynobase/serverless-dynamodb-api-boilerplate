@@ -2,6 +2,7 @@ create:
   handler: functions/api/rest/create/function.handle
   events:
     - http:
+        cors: true
         method: post
         path: /
         request:
