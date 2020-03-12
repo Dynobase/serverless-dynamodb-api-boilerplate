@@ -1,0 +1,14 @@
+get:
+    handler: functions/api/rest/delete/function.handle
+    role: RestAPIDeleteFunctionRole
+    events:
+      - http:
+          cors: true
+          method: delete
+          path: /
+          parameters:
+            querystrings:
+              id: true
+              status: true
+              date_added: true
+    
