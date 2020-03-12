@@ -1,0 +1,27 @@
+service:
+  name: serverless-dynamodb-api-boilerplate
+
+frameworkVersion: '>=1.50.0'
+
+custom:
+  stage: ${opt:stage, 'dev'}
+
+plugins:
+  - serverless-webpack
+  - serverless-plugin-tracing
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  tracing: true # Enable X-Ray tracing
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1 # Make sure AWS-SDK reuses HTTP connections
+    DATA_STORE_ARN:
+      Ref: SingleTableDesignDynamoDBTable
+
+functions:
+  - ${file(./functions/create/function.yml)}
+
+resources:
+  - ${file(./infra/dynamodb/single-table-data-store.yml)}

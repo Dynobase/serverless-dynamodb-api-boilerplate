@@ -1,0 +1,6 @@
+create:
+  handler: functions/create/function/handler
+  events:
+    - http:
+        method: post
+        path: /

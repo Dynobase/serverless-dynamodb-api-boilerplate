@@ -1,0 +1,47 @@
+Resources:
+  SingleTableDesignDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: datastore-${self:provider.stage}
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+        - AttributeName: sk
+          AttributeType: S
+        - AttributeName: data
+          AttributeType: S
+        - AttributeName: model
+          AttributeType: S
+        - AttributeName: ref
+          AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+        - AttributeName: sk
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: gsi_1
+          KeySchema:
+            - AttributeName: sk
+              KeyType: HASH
+            - AttributeName: data
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+        - IndexName: gsi_2
+          KeySchema:
+            - AttributeName: model
+              KeyType: HASH
+            - AttributeName: sk
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+        - IndexName: gsi_3
+          KeySchema:
+            - AttributeName: ref
+              KeyType: HASH
+            - AttributeName: data
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
