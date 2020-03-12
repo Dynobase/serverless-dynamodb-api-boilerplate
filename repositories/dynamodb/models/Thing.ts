@@ -1,7 +1,7 @@
 import { Model } from "dynamodb-toolbox";
 import getTableName from "../../../utils/consts";
 
-export const PostModel = new Model("Post", {
+export const ThingModel = new Model("Thing", {
   // Specify table name
   table: getTableName(),
 
