@@ -6,8 +6,10 @@
  */
 
 export type NameOfTheThing = string;
+export type StatusOfTheThing = string;
 
 export interface Thing {
   name: NameOfTheThing;
+  status?: StatusOfTheThing;
   [k: string]: any;
 }

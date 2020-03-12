@@ -32,7 +32,15 @@ provider:
     DATA_STORE_ARN: datastore-${self:provider.stage}
 
 functions:
+  # REST API
+  - ${file(./functions/api/rest/get/function.yml)}
+  - ${file(./functions/api/rest/list/function.yml)} # TODO
   - ${file(./functions/api/rest/create/function.yml)}
+  - ${file(./functions/api/rest/update/function.yml)} # TODO
+  - ${file(./functions/api/rest/delete/function.yml)} # TODO
+
+  # GraphQL API
+  # To be added...
 
 resources:
   # DynamoDB
@@ -43,3 +51,5 @@ resources:
 
   # IAM
   - ${file(./functions/api/rest/create/role.yml)}
+  - ${file(./functions/api/rest/get/role.yml)}
+  

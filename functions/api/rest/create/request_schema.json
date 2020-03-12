@@ -10,6 +10,11 @@
         "title": "Name of the thing",
         "default": "",
         "pattern": "^[a-zA-Z0-9]+$"
+      }, "status": {
+        "type": "string",
+        "title": "Status of the thing",
+        "default": "OK",
+        "pattern": "^[a-zA-Z0-9]+$"
       }
     }
   }
