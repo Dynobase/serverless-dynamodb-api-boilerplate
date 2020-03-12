@@ -32,3 +32,6 @@ resources:
 
   # S3
   - ${file(./infra/s3/dynamic-assets-bucket.yml)}
+
+  # IAM
+  - ${file(./functions/api/rest/create/role.yml)}

@@ -1,9 +1,9 @@
 Resources:
-  CRUDCreateFunctionRole:
+  RestAPICreateFunctionRole:
     Type: AWS::IAM::Role
     Properties:
-      Path: /xhq/
-      RoleName: CRUDCreateFunctionRole-${self:custom.stage}
+      Path: /
+      RoleName: ServerlessCRUDCreateFunctionRole-${self:custom.stage}
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -19,7 +19,7 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
-                  - dynamodb:*
+                  - dynamodb:PutItem
                 Resource:
                   Ref: SingleTableDesignDynamoDBTable
               - Effect: Allow

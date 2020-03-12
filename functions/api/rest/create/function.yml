@@ -1,5 +1,6 @@
 create:
   handler: functions/api/rest/create/function.handle
+  role: RestAPICreateFunctionRole
   events:
     - http:
         cors: true
