@@ -40,5 +40,20 @@ Once ready, install dependencies:
 yarn
 ```
 
+After that, start the project locally:
+```sh
+yarn dev
+```
+
 ## Deploying
+
+...
+
+## <a name="contributing"></a>Contributing
+
+Contributions are more than welcome.
+
+## <a name="licensing"></a>Licensing
+
+This project is licensed under the [MIT License](./LICENSE.txt).
 

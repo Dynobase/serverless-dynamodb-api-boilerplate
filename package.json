@@ -4,7 +4,8 @@
   "description": "Serverless webpack example using Typescript",
   "main": "handler.js",
   "scripts": {
-    "deploy": "export NODE_OPTIONS=--max_old_space_size=8192 serverless deploy"
+    "deploy": "NODE_OPTIONS=--max_old_space_size=8192 serverless deploy",
+    "dev": "NODE_OPTIONS=--max_old_space_size=8192 serverless offline"
   },
   "dependencies": {
     "dynamodb-toolbox": "^0.1.0",
