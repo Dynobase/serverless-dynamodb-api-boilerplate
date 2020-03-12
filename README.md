@@ -12,12 +12,12 @@ This repository is a result of many lessons from launching variety of Serverless
 
 ## Features
 
-- Written in Typescript, compiled by Webpack using [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack) plugin. Optimized for huge projects where Out of Memory errors are frequent
-- Works fully offline thanks to [Serverless Offline](https://github.com/dherault/serverless-offline) and DynamoDB Local ran using Docker Compose
-- Testable using Jest
-- Interacts with DynamoDB using [DocumentClient](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html) and [DynamoDB Toolbox](http://dynamodbtoolbox.com/)
-- Works with both REST and GraphQL
-- To avoid spaghetti code, `serverless.yml` is divided into logical parts. Functions' code is placed next to their definitions.
+- **Written in Typescript**, compiled by Webpack using [Serverless Webpack](https://github.com/serverless-heaven/serverless-webpack) plugin. Optimized for huge projects where Out of Memory errors are frequent
+- **Works fully offline** thanks to [Serverless Offline](https://github.com/dherault/serverless-offline) and DynamoDB Local ran using Docker Compose
+- **Testable** using Jest
+- **Interacts with DynamoDB** using [DocumentClient](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html) and [DynamoDB Toolbox](http://dynamodbtoolbox.com/)
+- **Works with both REST and GraphQL**
+- **Managable** - To avoid spaghetti code, `serverless.yml` is divided into logical parts. Functions' code is placed next to their definitions.
 
 ## Quick start
 
