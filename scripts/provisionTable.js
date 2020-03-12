@@ -24,7 +24,11 @@ const tableParams = YAML.safeLoad(
 );
 
 ddb
-  .createTable(tableParams.Resources.SingleTableDesignDynamoDBTable.Properties)
+  .createTable(
+    {
+      ...tableParams.Resources.SingleTableDesignDynamoDBTable.Properties,
+      TableName: argv.table
+    })
   .promise()
   .then(console.log)
   .catch(console.error);
