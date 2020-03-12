@@ -52,6 +52,11 @@ docker-compose up -d # To start DynamoDB local
 yarn provision-local-table # To provision DynamoDB table locally
 
 yarn dev
+
+# Add item to the table
+curl --location --request GET 'localhost:3000/' \
+--header 'Content-Type: text/plain' \
+--data-raw '{ "name":"John Doe" }'
 ```
 
 ## Deploying
