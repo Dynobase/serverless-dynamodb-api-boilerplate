@@ -5,8 +5,8 @@
   "main": "handler.js",
   "scripts": {
     "deploy": "NODE_OPTIONS=--max_old_space_size=8192 serverless deploy",
-    "provision-local-table": "node scripts/provisionTable.js --table datastore-local --region local --endpoint http://localhost:8000",
-    "dev": "NODE_OPTIONS=--max_old_space_size=8192 serverless offline"
+    "provision-local-table": "node scripts/provisionTable.js --table datastore-dev --region us-east-1 --endpoint http://localhost:8000",
+    "dev": "AWS_REGION=local NODE_OPTIONS=--max_old_space_size=8192 serverless offline"
   },
   "dependencies": {
     "aws-xray-sdk": "^2.5.0",

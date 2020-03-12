@@ -16,7 +16,7 @@ export const getRegion = () => {
   } else if (process.env.AWS_DEFAULT_REGION) {
     return process.env.AWS_DEFAULT_REGION;
   } else {
-    return "us-east-1";
+    return "local";
   }
 };
 

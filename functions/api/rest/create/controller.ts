@@ -17,12 +17,9 @@ export const createController = async (
     date_added: (+new Date()).toString(),
     name: input.name,
   };
-
   const params = ThingModel.put(item);
 
-  console.log(params);
+  await documentClient.put(params).promise();
 
-  const result = await documentClient.put(params).promise();
-
-  return result.Attributes;
+  return item;
 };
