@@ -1,0 +1,9 @@
+Resources:
+  DynamicAssetsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: dynamic-assets-${self:provider.stage}
+      AccessControl: PublicRead
+      Tags:
+        - Key: Environment
+          Value: ${self:provider.stage}

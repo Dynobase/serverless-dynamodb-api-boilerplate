@@ -24,4 +24,8 @@ functions:
   - ${file(./functions/create/function.yml)}
 
 resources:
+  # DynamoDB
   - ${file(./infra/dynamodb/single-table-data-store.yml)}
+
+  # S3
+  - ${file(./infra/s3/dynamic-assets-bucket.yml)}
