@@ -6,6 +6,14 @@ frameworkVersion: '>=1.50.0'
 custom:
   stage: ${opt:stage, 'local'} # Fallback to "local" if not set via --stage flag  
 
+  # As your solution will grow, you'll probably need to use Nested Stacks to avoid 200 resources limit of CloudFormation
+  # splitStacks:
+  #   perFunction: true
+  #   perType: false
+  #   perGroupFunction: false
+  #   stackConcurrency: 5 
+  #   resourceConcurrency: 10
+
 plugins:
   - serverless-webpack
   - serverless-plugin-tracing
