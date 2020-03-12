@@ -1,0 +1,15 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "Thing",
+    "required": ["name"],
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name of the thing",
+        "default": "",
+        "pattern": "^[a-zA-Z0-9]+$"
+      }
+    }
+  }

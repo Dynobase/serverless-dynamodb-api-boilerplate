@@ -4,7 +4,7 @@ service:
 frameworkVersion: '>=1.50.0'
 
 custom:
-  stage: ${opt:stage, 'dev'}
+  stage: ${opt:stage, 'dev'} # Fallback to dev if not set via --stage flag  
 
 plugins:
   - serverless-webpack
@@ -13,6 +13,10 @@ plugins:
 
 provider:
   name: aws
+  logs:
+    restApi: true
+  stackTags:
+    Environment: ${self:custom.stage}
   runtime: nodejs10.x
   tracing: true # Enable X-Ray tracing
   environment:
@@ -21,7 +25,7 @@ provider:
       Ref: SingleTableDesignDynamoDBTable
 
 functions:
-  - ${file(./functions/create/function.yml)}
+  - ${file(./functions/api/rest/create/function.yml)}
 
 resources:
   # DynamoDB

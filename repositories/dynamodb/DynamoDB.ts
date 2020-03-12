@@ -2,7 +2,7 @@ import * as AWSXRay from "aws-xray-sdk";
 import { DynamoDB } from "aws-sdk";
 import { getEndpoint, getRegion } from "../../utils/consts";
 
-const documentClient = new DynamoDB.DocumentClient({
+export const documentClient = new DynamoDB.DocumentClient({
   service: new DynamoDB({
     endpoint: getEndpoint(),
     region: getRegion()
