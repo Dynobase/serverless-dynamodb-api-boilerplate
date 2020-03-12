@@ -12,6 +12,8 @@ export const ThingModel = new Model("Thing", {
   partitionKey: "pk",
   sortKey: "sk",
 
+  timestamps: true,
+
   // Define schema
   schema: {
     pk: { type: "string", alias: "id" },

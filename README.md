@@ -62,6 +62,12 @@ curl --location --request POST 'localhost:3000/' \
 
 ...
 
+## Viewing DynamoDB Local contents
+
+Apart from using DynamoDB Shell or CLI, you can use [Dynobase](https://dynobase.dev) to view contents of your local tables:
+
+![Dynobase Interface](https://i.imgur.com/5iJYB9J.png "Dynobase showing contents of Local DynamoDB instance")
+
 ## <a name="contributing"></a>Contributing
 
 Contributions are more than welcome.

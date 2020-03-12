@@ -6,8 +6,6 @@ import { documentClient } from "../../../../services/DynamoDB";
 import { getController } from "./controller";
 
 export const handle: APIGatewayProxyHandler = async (event, _context) => {
-  console.log(event);
-
   try {
     const result = await getController(event, documentClient);
     return httpResponse(result);
