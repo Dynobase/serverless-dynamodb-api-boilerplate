@@ -2,7 +2,7 @@ get:
   handler: functions/api/rest/get/function.handle
   role: RestAPIGetFunctionRole
   events:
-    - http:
+    - http: # Replace with httpApi for HTTP API support (but does not work with offline)
         cors: true
         method: get
         path: /
@@ -11,4 +11,3 @@ get:
             id: true
             status: true
             date_added: true
-  

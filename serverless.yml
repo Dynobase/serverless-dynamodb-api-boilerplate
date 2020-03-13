@@ -1,17 +1,17 @@
 service:
   name: serverless-dynamodb-api-boilerplate
 
-frameworkVersion: '>=1.50.0'
+frameworkVersion: ">=1.50.0"
 
 custom:
-  stage: ${opt:stage, 'local'} # Fallback to "local" if not set via --stage flag  
+  stage: ${opt:stage, 'local'} # Fallback to "local" if not set via --stage flag
 
   # As your solution will grow, you'll probably need to use Nested Stacks to avoid 200 resources limit of CloudFormation
   # splitStacks:
   #   perFunction: true
   #   perType: false
   #   perGroupFunction: false
-  #   stackConcurrency: 5 
+  #   stackConcurrency: 5
   #   resourceConcurrency: 10
 
 plugins:
@@ -23,6 +23,7 @@ provider:
   name: aws
   logs:
     restApi: true
+    httpApi: true
   stackTags:
     Environment: ${self:custom.stage}
   runtime: nodejs10.x
@@ -37,7 +38,7 @@ functions:
   - ${file(./functions/api/rest/list/function.yml)} # TODO
   - ${file(./functions/api/rest/create/function.yml)}
   - ${file(./functions/api/rest/update/function.yml)} # TODO
-  - ${file(./functions/api/rest/delete/function.yml)} # TODO
+  - ${file(./functions/api/rest/delete/function.yml)}
 
   # GraphQL API
   # To be added...
@@ -52,4 +53,3 @@ resources:
   # IAM
   - ${file(./functions/api/rest/create/role.yml)}
   - ${file(./functions/api/rest/get/role.yml)}
-  

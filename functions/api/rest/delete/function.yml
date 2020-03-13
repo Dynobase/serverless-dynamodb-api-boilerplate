@@ -1,14 +1,13 @@
 get:
-    handler: functions/api/rest/delete/function.handle
-    role: RestAPIDeleteFunctionRole
-    events:
-      - http:
-          cors: true
-          method: delete
-          path: /
-          parameters:
-            querystrings:
-              id: true
-              status: true
-              date_added: true
-    
+  handler: functions/api/rest/delete/function.handle
+  role: RestAPIDeleteFunctionRole
+  events:
+    - http: # Replace with httpApi for HTTP API support (but does not work with offline)
+        cors: true
+        method: delete
+        path: /
+        parameters:
+          querystrings:
+            id: true
+            status: true
+            date_added: true
