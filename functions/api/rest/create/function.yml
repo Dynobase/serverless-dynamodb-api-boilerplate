@@ -2,7 +2,7 @@ create:
   handler: functions/api/rest/create/function.handle
   role: RestAPICreateFunctionRole
   events:
-    - httpApi:
+    - http:
         cors: true
         method: post
         path: /

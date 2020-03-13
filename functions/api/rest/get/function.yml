@@ -2,7 +2,7 @@ get:
   handler: functions/api/rest/get/function.handle
   role: RestAPIGetFunctionRole
   events:
-    - httpApi:
+    - http:
         cors: true
         method: get
         path: /
@@ -11,3 +11,4 @@ get:
             id: true
             status: true
             date_added: true
+  

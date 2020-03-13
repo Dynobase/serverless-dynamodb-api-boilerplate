@@ -2,7 +2,7 @@
 
 Kickstart your Cloud-native and Serverless project in minutes. **This is work in progress**
 
----
+***
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
 
@@ -19,12 +19,10 @@ This repository is a result of many lessons from launching variety of Serverless
 - **Works with both REST and GraphQL**
 - **Managable** - To avoid spaghetti code, `serverless.yml` is divided into logical parts. Functions' code is placed next to their definitions
 - **CORS by default** - allows preflight requests to the resource using the OPTIONS method.
-- **Uses HTTP API** instead of API Gateway v1 - up to 70% cheaper and 50% faster
 
 ## Quick start
 
 Prerequisites:
-
 - [Serverless Framework](https://serverless.com/)
 - Node.js
 - Git
@@ -48,7 +46,6 @@ yarn
 ```
 
 After that, start the project locally:
-
 ```sh
 docker-compose up -d # To start DynamoDB local
 
@@ -78,3 +75,4 @@ Contributions are more than welcome.
 ## <a name="licensing"></a>Licensing
 
 This project is licensed under the [MIT License](./LICENSE.txt).
+

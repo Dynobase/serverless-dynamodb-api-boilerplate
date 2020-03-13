@@ -6,8 +6,7 @@ export const documentClient = new DynamoDB.DocumentClient({
   service: new DynamoDB({
     endpoint: getEndpoint(),
     region: getRegion()
-  }),
-  convertEmptyValues: true
+  })
 });
 
 // Capture X-Ray traces only on AWS Lambda
