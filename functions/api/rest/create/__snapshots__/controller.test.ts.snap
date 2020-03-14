@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`REST/Create Create Audience 1`] = `
+Object {
+  "date_added": "1584184303910",
+  "id": "35feffae-d4c2-451f-8839-fb7355838bf7",
+  "name": "Testing",
+  "status": "OK",
+}
+`;
