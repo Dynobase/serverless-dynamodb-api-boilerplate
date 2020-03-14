@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`REST/Create Create Audience 1`] = `
+exports[`REST/Create returns created Thing 1`] = `
 Object {
-  "date_added": "1584184303910",
-  "id": "35feffae-d4c2-451f-8839-fb7355838bf7",
+  "date_added": "1584184460879",
+  "id": "f328ee8b-7e8a-4e8e-9525-fb1e42a11491",
   "name": "Testing",
   "status": "OK",
 }

@@ -3,13 +3,13 @@ import { documentClient } from "../../../../services/DynamoDB";
 import { APIGatewayProxyEventSample } from "../../../../consts/APIGatewayProxyEventSample";
 
 describe("REST/Create", () => {
-  test("Create Audience", async done => {
+  test("returns created Thing", async done => {
     const response = await createController(
       {
         ...APIGatewayProxyEventSample,
         body: `{"name":"Testing"}`
       },
-      documentClient
+      documentClient // can be mocked to disable DB access
     );
 
     expect(response).toMatchSnapshot();
