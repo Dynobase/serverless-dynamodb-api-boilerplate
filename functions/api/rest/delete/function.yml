@@ -1,8 +1,8 @@
-get:
+delete:
   handler: functions/api/rest/delete/function.handle
   role: RestAPIDeleteFunctionRole
   events:
-    - http: # Replace with httpApi for HTTP API support (but does not work with offline)
+    - httpApi:
         cors: true
         method: delete
         path: /

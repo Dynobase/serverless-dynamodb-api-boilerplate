@@ -2,7 +2,7 @@ get:
   handler: functions/api/rest/get/function.handle
   role: RestAPIGetFunctionRole
   events:
-    - http: # Replace with httpApi for HTTP API support (but does not work with offline)
+    - httpApi:
         cors: true
         method: get
         path: /

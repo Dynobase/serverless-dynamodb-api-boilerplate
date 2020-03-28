@@ -18,7 +18,8 @@ This repository is a result of many lessons from launching variety of Serverless
 - **Interacts with DynamoDB** using [DocumentClient](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html) and [DynamoDB Toolbox](http://dynamodbtoolbox.com/)
 - **Works with both REST and GraphQL**
 - **Managable** - To avoid spaghetti code, `serverless.yml` is divided into logical parts. Functions' code is placed next to their definitions
-- **CORS by default** - allows preflight requests to the resource using the OPTIONS method.
+- **CORS by default** - allows preflight requests to the resource using the OPTIONS method
+- **HTTP API** - uses new version of API Gateway which provides costs savings up to 70%
 
 ## Quick start
 
@@ -51,7 +52,7 @@ docker-compose up -d # To start DynamoDB local
 
 yarn provision-local-table # To provision DynamoDB table locally
 
-yarn dev
+yarn dev # Run project locally
 
 # Add item to the table
 curl --location --request POST 'localhost:3000/' \

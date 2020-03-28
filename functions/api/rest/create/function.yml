@@ -2,7 +2,7 @@ create:
   handler: functions/api/rest/create/function.handle
   role: RestAPICreateFunctionRole
   events:
-    - http: # Replace with httpApi for HTTP API support (but does not work with offline)
+    - httpApi:
         cors: true
         method: post
         path: /
