@@ -60,7 +60,29 @@ curl --location --request POST 'localhost:3000/dev' --data-raw '{ "name":"John D
 
 ## Deploying
 
-...
+```sh
+sls deploy
+```
+
+### Adding new function
+
+1. Create new folder in `functions` directory. It should contain:
+- `function.yml` - function definition in accordance to Serverless Framework contract
+- `function.ts` - actual implementation of Lambda function
+
+Optionally: 
+- `role.yml` - in order to get better control over IAM Role tied to the function, referenced inside function's `role` property
+- `controller.ts` - the best practice is to keep functions as thin as possible. Controllers with injectable dependencies allow that
+- `request_schema.json` - request object definition in JSON Schema
+
+2. Include newly created function in `serverless.yml` like so:
+```
+- ${file(./functions/<new_function_directory>/function.yml)}
+```
+
+3. Run `yarn generate-request-types` to generate Typescript types from request JSON Schema
+
+4. Complete implementation of your function
 
 ## Viewing DynamoDB Local contents
 
