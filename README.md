@@ -55,8 +55,7 @@ yarn provision-local-table # To provision DynamoDB table locally
 yarn dev # Run project locally
 
 # Add item to the table
-curl --location --request POST 'localhost:3000/' \
---data-raw '{ "name":"John Doe" }'
+curl --location --request POST 'localhost:3000/dev' --data-raw '{ "name":"John Doe" }'
 ```
 
 ## Deploying
