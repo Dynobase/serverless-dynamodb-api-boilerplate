@@ -7,3 +7,8 @@ jspm_packages
 
 # Webpack directories
 .webpack
+
+# GraphQL Generated Files
+schema.graphql
+graphql.schema.json
+graphql/entities/*.ts

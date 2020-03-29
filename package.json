@@ -4,26 +4,38 @@
   "description": "Serverless webpack example using Typescript",
   "main": "handler.js",
   "scripts": {
-    "deploy": "NODE_OPTIONS=--max_old_space_size=8192 serverless deploy",
+    "deploy": "npm run make:graphql && NODE_OPTIONS=--max_old_space_size=8192 serverless deploy",
     "provision-local-table": "node scripts/provisionTable.js --table datastore-dev --region us-east-1 --endpoint http://localhost:8000",
     "generate-request-types": "node scripts/jsonSchemasToInterfaces.js",
-    "dev": "AWS_REGION=local NODE_OPTIONS=--max_old_space_size=8192 serverless offline",
-    "test": "jest"
+    "dev": "npm run make:graphql && AWS_REGION=local NODE_OPTIONS=--max_old_space_size=8192 serverless offline",
+    "test": "npm run make:graphql && jest",
+    "make:graphql": "npm run make:schema && npm run make:types",
+    "make:schema": "node scripts/graphql/mergeTypes.js",
+    "make:types": "gql-gen --config codegen.yml"
   },
   "dependencies": {
+    "aws-lambda-graphql": "^1.0.0-alpha.4",
     "aws-xray-sdk": "^2.5.0",
     "dynamodb-toolbox": "^0.1.0",
+    "graphql": "^14.6.0",
+    "graphql-subscriptions": "^1.1.0",
     "json-schema-to-typescript": "^8.1.0",
     "serverless": "^1.66.0",
     "source-map-support": "^0.5.10",
-    "uuidv4": "^6.0.6"
+    "uuidv4": "^6.0.6",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.17",
     "@types/jest": "^25.1.4",
     "@types/node": "^10.12.18",
     "glob": "^7.1.6",
+    "graphql-code-generator": "^0.18.2",
+    "graphql-codegen-introspection": "^0.18.2",
+    "graphql-codegen-typescript-common": "^0.18.2",
+    "graphql-codegen-typescript-server": "^0.18.2",
     "jest": "^25.1.0",
+    "merge-graphql-schemas": "^1.7.6",
     "minimist": "^1.2.4",
     "serverless-offline": "6.1.2",
     "serverless-plugin-tracing": "^2.0.0",

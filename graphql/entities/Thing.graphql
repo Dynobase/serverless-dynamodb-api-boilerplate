@@ -1,0 +1,18 @@
+type Thing {
+    id: ID!
+    name: String!
+}
+
+type ThingsResult {
+    items: [Thing]
+    nextPage: String
+}
+
+type Query {
+    listThings: ThingsResult
+    getThing(id: ID!): Thing
+}
+
+type Mutation {
+    createThing(name: String!): Thing!
+}
